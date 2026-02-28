@@ -19,11 +19,14 @@ ByteMap is a playful software project that explores the concept of storing arbit
 ## Setting Up
 
 1. Create and activate a virtual environment:
+
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate
    ```
+
 2. Install dependencies:
+
    ```bash
    pip install -r requirements.txt
    ```
@@ -57,6 +60,7 @@ python main.py decompress secret.png recovered.txt
 > **Note:** This project is for entertainment and educational purposes only. It is not a serious or efficient solution for data storage or compression.
 
 ## Requirements
+
 - Python 3.7+
 - See `requirements.txt` for dependencies.
 
