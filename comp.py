@@ -25,8 +25,9 @@ def encode_file_to_image(input_filepath, output_image_path):
     total_bytes = len(full_data)
     total_pixels = math.ceil(total_bytes / 3)
 
-    width = math.ceil(math.sqrt(total_pixels))
-    height = width 
+    # Use minimal bounding rectangle (width x height)
+    width = min(4096, total_pixels)  # Limit width for practical image sizes
+    height = math.ceil(total_pixels / width)
 
     required_bytes = width * height * 3
     padding_needed = required_bytes - total_bytes
