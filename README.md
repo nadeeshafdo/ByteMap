@@ -1,13 +1,13 @@
 # ByteMap
 
-ByteMap is a playful software project that explores the concept of storing arbitrary data by converting it into images and applying advanced (not really 🙂) lossless compression techniques. While the project is not intended for any production use, it serves as a fun experiment in data encoding, image processing, and compression.
+ByteMap is a playful software project that explores the concept of storing arbitrary data by converting it into images. This project is not a compression tool, nor is it intended for steganography or secure storage. It is a fun experiment in data encoding and image processing, and the resulting images are not smaller than the original files.
 
 ## Features
 
 - **Data-to-Image Conversion**: Transforms binary data into image representations.
-- **Lossless Compression**: Applies advanced lossless compression to minimize storage size (Ahh.. near future 🙂?) while maintaining data integrity.
-- **Decompression**: Recovers the original data from the compressed image.
-- **Simple CLI**: Includes command-line tools for compressing and decompressing files.
+- **Encoding**: Converts binary data into image representations.
+- **Decoding**: Recovers the original data from the encoded image.
+- **Simple CLI**: Includes command-line tools for encoding and decoding files.
 
 ## Project Structure
 
@@ -33,31 +33,31 @@ ByteMap is a playful software project that explores the concept of storing arbit
 
 ## Usage
 
-### Compress a File
+### Encode a File
 
 ```bash
-python main.py compress <input_file> <output_image>
+python main.py encode <input_file> <output_image>
 ```
 
-### Decompress a File
+### Decode a File
 
 ```bash
-python main.py decompress <input_image> <output_file>
+python main.py decode <input_image> <output_file>
 ```
 
 ## Example
 
 ```bash
-python main.py compress secret.txt secret.png
-python main.py decompress secret.png recovered.txt
+python main.py encode secret.txt secret.png
+python main.py decode secret.png recovered.txt
 ```
 
 ## How It Works (Sort Of)
 
-1. **Compression**: Reads the input file, encodes the data as pixel values in an image, and saves the image using a lossless format.
-2. **Decompression**: Reads the image, decodes the pixel values back into the original data, and writes it to the output file.
+1. **Encoding**: Reads the input file, encodes the data as pixel values in an image, and saves the image using a lossless format.
+2. **Decoding**: Reads the image, decodes the pixel values back into the original data, and writes it to the output file.
 
-> **Note:** This project is for entertainment and educational purposes only. It is not a serious or efficient solution for data storage or compression.
+> **Note:** This project is for entertainment and educational purposes only. It is not a serious or efficient solution for data storage, compression, or steganography. The PNG output is typically larger than the original file and is not intended for real-world use cases.
 
 ## Requirements
 
