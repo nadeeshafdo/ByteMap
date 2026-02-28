@@ -16,19 +16,14 @@ ByteMap is a playful software project that explores the concept of storing arbit
 - `decomp.py` — Handles image-to-data conversion and decompression logic.
 - `requirements.txt` — Python dependencies.
 
-## Installation
+## Setting Up
 
-1. Clone the repository:
-   ```bash
-   git clone <repo-url>
-   cd ByteMap
-   ```
-2. (Optional) Create and activate a virtual environment:
+1. Create and activate a virtual environment:
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate
    ```
-3. Install dependencies:
+2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
@@ -56,7 +51,7 @@ python main.py decompress secret.png recovered.txt
 
 ## How It Works (Sort Of)
 
-1. **Compression**: Reads the input file, encodes the data as pixel values in an image, and saves the image using a lossless format (e.g., PNG).
+1. **Compression**: Reads the input file, encodes the data as pixel values in an image, and saves the image using a lossless format.
 2. **Decompression**: Reads the image, decodes the pixel values back into the original data, and writes it to the output file.
 
 > **Note:** This project is for entertainment and educational purposes only. It is not a serious or efficient solution for data storage or compression.
