@@ -8,7 +8,7 @@ def main():
         description="ByteMap: A modular Binary-to-PNG Encoder and Decoder.",
         formatter_class=argparse.RawTextHelpFormatter
     )
-    
+
     parser.add_argument(
         'mode', 
         choices=['encode', 'decode'], 
@@ -21,9 +21,12 @@ def main():
 
     try:
         if args.mode == 'encode':
-            file_size, width, height = encode_file_to_image(args.input, args.output)
-            print(f"[SUCCESS] Encoded {file_size} bytes into a {width}x{height} PNG: {args.output}")
-            
+            orig_size, comp_size, width, height = encode_file_to_image(args.input, args.output)
+            savings = (1 - (comp_size / orig_size)) * 100 if orig_size > 0 else 0
+
+            print(f"[SUCCESS] Compressed {orig_size} bytes down to {comp_size} bytes ({savings:.1f}% reduction).")
+            print(f"[SUCCESS] Encoded into a {width}x{height} PNG: {args.output}")
+
         elif args.mode == 'decode':
             file_size = decode_image_to_file(args.input, args.output)
             print(f"[SUCCESS] Decoded {file_size} bytes to: {args.output}")
