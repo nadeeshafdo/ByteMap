@@ -1,11 +1,11 @@
 # ByteMap
 
-ByteMap is a playful software project that explores the concept of storing arbitrary data by converting it into images and applying advanced (not really) lossless compression techniques. While the project is not intended for production use, it serves as a fun experiment in data encoding, image processing, and compression.
+ByteMap is a playful software project that explores the concept of storing arbitrary data by converting it into images and applying advanced (not really 🙂) lossless compression techniques. While the project is not intended for any production use, it serves as a fun experiment in data encoding, image processing, and compression.
 
 ## Features
 
 - **Data-to-Image Conversion**: Transforms binary data into image representations.
-- **Lossless Compression**: Applies (tongue-in-cheek) advanced lossless compression to minimize storage size while maintaining data integrity.
+- **Lossless Compression**: Applies advanced lossless compression to minimize storage size (Ahh.. near future 🙂?) while maintaining data integrity.
 - **Decompression**: Recovers the original data from the compressed image.
 - **Simple CLI**: Includes command-line tools for compressing and decompressing files.
 
