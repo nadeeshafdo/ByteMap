@@ -2,8 +2,8 @@ import struct
 import lzma
 from PIL import Image
 
-def decode_image_to_file(image_filepath, output_filepath):
-    """Extracts and decompresses the original file from an RGB PNG image."""
+def decode_image_to_data(image_filepath) -> bytes:
+    """Extracts and decompresses the original payload from an RGB PNG image."""
     try:
         img = Image.open(image_filepath)
     except FileNotFoundError:
@@ -24,13 +24,16 @@ def decode_image_to_file(image_filepath, output_filepath):
     end_index = 11 + compressed_size
     actual_compressed_data = full_data[start_index:end_index]
 
-    # Decompress back to the exact original payload
     try:
         original_data = lzma.decompress(actual_compressed_data)
     except lzma.LZMAError:
         raise ValueError("LZMA decompression failed. The payload is corrupted.")
 
+    return original_data
+
+def decode_image_to_file(image_filepath, output_filepath):
+    """Decodes an image and writes the payload to a file."""
+    original_data = decode_image_to_data(image_filepath)
     with open(output_filepath, 'wb') as f:
         f.write(original_data)
-
     return len(original_data)
